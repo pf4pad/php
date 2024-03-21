@@ -11,10 +11,14 @@
 </head>
 
 <body>
+  <?php
+  $rawApiResponse = file_get_contents('https://dog.ceo/api/breeds/image/random');
+  $apiResponse = json_decode($rawApiResponse, true);
 
 
+  ?>
 
-
+  <img src="<?= $apiResponse["message"] ?>" alt="">
 </body>
 
 </html>
